@@ -165,15 +165,15 @@ export default function Home() {
           )}
 
           {currentView === 'LATEST_JOBS' && (
-            <LatestJobsPage currentLang={currentLang} setCurrentView={setCurrentView} setSelectedJob={setSelectedJob} onOpenCafeRadar={() => setShowRadar(true)} t={t} />
+            <LatestJobsPage {...({ currentLang, setCurrentView, setSelectedJob, onOpenCafeRadar: () => setShowRadar(true), t } as any)} />
           )}
 
           {currentView === 'ADMIT_CARD' && (
-            <AdmitCardPage currentLang={currentLang} setCurrentView={setCurrentView} setSelectedJob={setSelectedJob} onOpenCafeRadar={() => setShowRadar(true)} t={t} />
+            <AdmitCardPage {...({ currentLang, setCurrentView, setSelectedJob, onOpenCafeRadar: () => setShowRadar(true), t } as any)} />
           )}
 
           {currentView === 'RESULT' && (
-            <ResultPage currentLang={currentLang} setCurrentView={setCurrentView} setSelectedJob={setSelectedJob} onOpenCafeRadar={() => setShowRadar(true)} t={t} />
+            <ResultPage {...({ currentLang, setCurrentView, setSelectedJob, onOpenCafeRadar: () => setShowRadar(true), t } as any)} />
           )}
 
           {currentView === 'ADMISSION' && (
@@ -189,35 +189,35 @@ export default function Home() {
           )}
 
           {currentView === 'IMPORTANT_LINKS' && (
-            <ImportantLinks currentLang={currentLang} />
+            <ImportantLinks {...({ currentLang } as any)} />
           )}
 
           {currentView === 'ABOUT' && (
-            <AboutUsPage currentLang={currentLang} />
+            <AboutUsPage {...({ currentLang } as any)} />
           )}
 
           {currentView === 'TERMS' && (
-            <TermsConditionPage currentLang={currentLang} />
+            <TermsConditionPage {...({ currentLang } as any)} />
           )}
 
           {currentView === 'CONTACT' && (
-            <ContactUsPage currentLang={currentLang} />
+            <ContactUsPage {...({ currentLang } as any)} />
           )}
 
           {currentView === 'SYLLABUS' && (
-            <SyllabusPage currentLang={currentLang} setCurrentView={setCurrentView} setSelectedJob={setSelectedJob} onOpenCafeRadar={() => setShowRadar(true)} t={t} />
+            <SyllabusPage {...({ currentLang, setCurrentView, setSelectedJob, onOpenCafeRadar: () => setShowRadar(true), t } as any)} />
           )}
 
           {currentView === 'ANSWER_KEY' && (
-            <AnswerKeyPage currentLang={currentLang} setCurrentView={setCurrentView} setSelectedJob={setSelectedJob} onOpenCafeRadar={() => setShowRadar(true)} t={t} />
+            <AnswerKeyPage {...({ currentLang, setCurrentView, setSelectedJob, onOpenCafeRadar: () => setShowRadar(true), t } as any)} />
           )}
 
           {currentView === 'SCHOLARSHIP' && (
-            <ScholarshipPage currentLang={currentLang} setCurrentView={setCurrentView} setSelectedJob={setSelectedJob} onOpenCafeRadar={() => setShowRadar(true)} t={t} />
+            <ScholarshipPage {...({ currentLang, setCurrentView, setSelectedJob, onOpenCafeRadar: () => setShowRadar(true), t } as any)} />
           )}
 
           {currentView === 'CERTIFICATE' && (
-            <CertificatePage currentLang={currentLang} setCurrentView={setCurrentView} setSelectedJob={setSelectedJob} onOpenCafeRadar={() => setShowRadar(true)} t={t} />
+            <CertificatePage {...({ currentLang, setCurrentView, setSelectedJob, onOpenCafeRadar: () => setShowRadar(true), t } as any)} />
           )}
 
           {currentView === 'CATEGORY_PAGE' && (
