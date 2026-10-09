@@ -1,4 +1,3 @@
-// app/pages/ContactUsPage.tsx
 'use client';
 import React, { useState } from 'react';
 
@@ -20,17 +19,27 @@ export default function ContactUsPage({ currentLang }: { currentLang: string }) 
           {isHindi ? 'संपर्क करें (Contact Us)' : 'Contact Us'}
         </h1>
         <p className="text-slate-200 text-xs sm:text-sm max-w-2xl mx-auto">
-          {isHindi ? 'यदि आपके पास कोई सुझाव, प्रश्न या सहायता की आवश्यकता है, तो बेझिझक हमसे संपर्क करें।' : 'If you have any queries, feedback, or need support, feel free to reach out to us.'}
+          {isHindi 
+            ? 'यदि आपके पास कोई सुझाव, प्रश्न या सहायता की आवश्यकता है, तो बेझिझक हमसे संपर्क करें।' 
+            : 'If you have any queries, feedback, or need support, feel free to reach out to us.'}
         </p>
       </div>
+
       <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm">
         <form onSubmit={handleSubmit} className="space-y-4 text-xs sm:text-sm">
-          {submitted && <div className="p-3 bg-emerald-50 text-emerald-700 rounded-2xl font-bold text-center">Success!</div>}
+          <h2 className="text-base font-black text-blue-900 pb-1">
+            {isHindi ? 'संदेश भेजें' : 'Send a Message'}
+          </h2>
+          {submitted && (
+            <div className="p-3 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-2xl font-bold text-center">
+              {isHindi ? '🎉 आपका संदेश सफलतापूर्वक भेज दिया गया है!' : '🎉 Message sent successfully!'}
+            </div>
+          )}
           <div>
             <label className="block text-slate-700 font-bold mb-1">{isHindi ? 'आपका नाम*' : 'Your Name*'}</label>
-            <input type="text" required className="w-full p-3 rounded-2xl border border-slate-200 bg-slate-50" />
+            <input type="text" required placeholder={isHindi ? 'पूरा नाम दर्ज करें' : 'Enter full name'} className="w-full p-3 rounded-2xl border border-slate-200 bg-slate-50" />
           </div>
-          <button type="submit" className="w-full py-3.5 bg-blue-600 text-white font-black rounded-2xl shadow-md">
+          <button type="submit" className="w-full py-3.5 bg-blue-600 text-white font-black rounded-2xl shadow-md cursor-pointer">
             {isHindi ? 'संदेश भेजें' : 'Send Message'}
           </button>
         </form>

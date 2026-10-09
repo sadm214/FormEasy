@@ -328,7 +328,7 @@ export default function HomeSection({
           <span className="inline-block bg-amber-400 text-slate-950 text-[9px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-xs">
             Official Digital Service Hub
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white leading-tight letterSpacing:3px">
+          <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white leading-tight ">
             Welcome to <span className="text-amber-400 ">FormEasy</span>
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed">
