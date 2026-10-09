@@ -151,7 +151,8 @@ export default function PdfStudio({ onClose, currentLang }: { onClose: () => voi
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
       setPdfFiles([file]);
-      const baseName = file.name.substring(0, file.name.lastIndexOf('.')) || file.name;
+      const fileName = file.name || 'document';
+      const baseName = fileName.substring(0, fileName.lastIndexOf('.')) || fileName;
       setOriginalFileName(baseName);
       setStatusMsg(currentLang === 'hi' ? `फ़ाइल लोड की गई: ${file.name}` : `File loaded: ${file.name}`);
     }
@@ -162,7 +163,8 @@ export default function PdfStudio({ onClose, currentLang }: { onClose: () => voi
       const filesArr = Array.from(e.target.files);
       setPdfFiles(filesArr);
       if (filesArr[0]) {
-        const baseName = filesArr[0].name.substring(0, filesArr[0].lastIndexOf('.')) || filesArr[0].name;
+        const fileName = filesArr[0].name || 'document';
+        const baseName = fileName.substring(0, fileName.lastIndexOf('.')) || fileName;
         setOriginalFileName(baseName);
       }
       setStatusMsg(currentLang === 'hi' ? `${filesArr.length} फ़ाइलें चुनी गईं।` : `${filesArr.length} file(s) selected.`);
@@ -481,7 +483,7 @@ export default function PdfStudio({ onClose, currentLang }: { onClose: () => voi
           <div className="lg:col-span-8 space-y-3">
             
             {/* Upload Box */}
-            <div className="relative border-2 border-dashed border-blue-300 hover:border-blue-500 rounded-2xl p-4 sm:p-5 bg-blue-50/40 transition text-center group flex flex-col items-center justify-center gap-1.5">
+            <div className="relative border-2 border-dashed border-blue-300 hover:border-blue-500 rounded-2xl p-4 sm:p-5 bg-blue-50/40 transition text-center cursor-pointer group flex flex-col items-center justify-center gap-1.5">
               <input 
                 type="file" 
                 id="pdf-studio-file-input"
